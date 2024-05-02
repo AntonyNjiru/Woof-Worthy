@@ -34,6 +34,29 @@ body {
   border-radius: 90px; /* Optional: Rounded corners for the image */
 }
 
+section{
+  display: flex;
+  align-items: centre;
+  justify-content: center;
+  padding: 100px 0;
+}
+
+.brand{
+  text-align: center;
+  font-size: 5em;
+}
+
+.brand-description{
+  font: 2.5em;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.brand img{
+  width: 100px;
+  margin-top: 50px;
+}
+
 p {
   font-family: "Poppins", sans-serif; 
   color:black; /* Light pink color, change as necessary to fit your color scheme */
@@ -60,7 +83,7 @@ p {
   box-shadow: 0 0 0.5rem rgba(255, 0, 0, 1);
   outline: 2px solid rgba(255, 0, 0, 0.6);
   overflow: hidden;
-  color: #fff;
+  color: black;
   cursor: pointer;
   border-radius: 0.5rem;
 }
