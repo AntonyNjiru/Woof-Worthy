@@ -10,8 +10,17 @@ const container = document.querySelector('.container');
 
 //function from fetching data from the api
 async function fetchPets(){
-    //fetcing the data from api
-    const response = await fetch(api);
-    //converting data to json
-    const petData = await response.json();
+    try{
+        //fetcing the data from api
+        const response = await fetch(api);
+        //converting data to json
+        const petData = await response.json();
+        console.log(petData);
+    }catch(error){
+        console.error(error)
+    }
+    
 }
+
+//adding an event listener to the button for fetching the json data
+searchButton.addEventListener('click', fetchPets);
