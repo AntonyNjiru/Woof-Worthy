@@ -31,36 +31,36 @@ searchButton.addEventListener('click', fetchPets);
 function generateHTML(results){
     //variable containing the html elements
     let generatedHTML = '';
-    results.forEach(result => {
-        generatedHTML += 
-        `
-        <div class="animal-grid">
-            <div class="card" data-id="${result.pet_id}">
-                <div class="img">
-                    <img src="${result.large_results_photo_url}" alt="Pet Image">
+results.forEach(result => {
+    generatedHTML +=
+    `
+    <div class="animal-grid">
+        <div class="card" data-id="${result.id}">
+            <div class="img">
+                <img src="${result.photo_url}" alt="${result.name}">
+            </div>
+            <div class="info">
+                <h2>${result.name}</h2>
+                <div class="single-info">
+                    <span>Breed: </span>
+                    <span>${result.breed}</span>
                 </div>
-                <div class="info">
-                    <h2>${result.pet_name}</h2>
-                    <div class="single-info">
-                        <span>Breed: </span>
-                        <span>${result.primary_breed}</span>
-                    </div>
-                    <div class="single-info">
-                        <span>Gender: </span>
-                        <span>${result.sex}</span>
-                    </div>
-                    <div class="single-info">
-                        <span>Age: </span>
-                        <span>${result.age}</span>
-                    </div>
-                    <div class="single-info">
-                        <span>Adoption Date: </span>
-                        <span>10-04-2022</span>
-                    </div>
+                <div class="single-info">
+                    <span>Gender: </span>
+                    <span>${result.gender}</span>
+                </div>
+                <div class="single-info">
+                    <span>Age: </span>
+                    <span>${result.age}</span>
+                </div>
+                <div class="single-info">
+                    <span>Adoption Date: </span>
+                    <span>${result.adoption_date}</span>
                 </div>
             </div>
         </div>
-        `
-    });
-    container.innerHTML = generatedHTML;
+    </div>
+    `;
+});
 }
+container.innerHTML = generatedHTML;

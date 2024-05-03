@@ -1,0 +1,59 @@
+{
+    "pets": [
+      {
+        "id": 1,
+        "photo_url": "https://placekitten.com/200/300",
+        "name": "Fido",
+        "breed": "Labrador",
+        "gender": "Male",
+        "age": "Young",
+        "adoption_date": "2022-10-04"
+      },
+      {
+        "id": 2,
+        "photo_url": "https://placekitten.com/200/300",
+        "name": "Whiskers",
+        "breed": "Siamese",
+        "gender": "Female",
+        "age": "Adult",
+        "adoption_date": "2021-12-11"
+      },
+      {
+        "id": 3,
+        "photo_url": "https://placekitten.com/210/310",
+        "name": "Buddy",
+        "breed": "Golden Retriever",
+        "gender": "Male",
+        "age": "Senior",
+        "adoption_date": "2020-08-15"
+      },
+      {
+        "id": 4,
+        "photo_url": "https://placekitten.com/220/320",
+        "name": "Daisy",
+        "breed": "Dalmatian",
+        "gender": "Female",
+        "age": "Puppy",
+        "adoption_date": "2023-01-22"
+      },
+      {
+        "id": 5,
+        "photo_url": "https://placekitten.com/230/330",
+        "name": "Shadow",
+        "breed": "German Shepherd",
+        "gender": "Male",
+        "age": "Adult",
+        "adoption_date": "2019-05-30"
+      },
+      {
+        "id": 6,
+        "photo_url": "https://placekitten.com/240/340",
+        "name": "Ginger",
+        "breed": "Beagle",
+        "gender": "Female",
+        "age": "Young",
+        "adoption_date": "2022-04-18"
+      }
+    ]
+  }
+  
