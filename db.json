@@ -127,7 +127,7 @@
         "adoption_date": "2023-01-22"
       },
       {
-        "id": 4,
+        "id": 15,
         "photo_url": "https://images.unsplash.com/photo-1619833043539-a49d3a8c1c8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaWxBfHByfHw8fGVwdGx8fA&auto=format&fit=crop&w=500&q=80",
         "name": "Daisy",
         "breed": "Dalmatian",
@@ -136,13 +136,31 @@
         "adoption_date": "2023-01-22"
       },
       {
-        "id": 4,
+        "id":16,
         "photo_url": "https://images.unsplash.com/photo-1619833043539-a49d3a8c1c8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaWxBfHByfHw8fGVwdGx8fA&auto=format&fit=crop&w=500&q=80",
         "name": "Tails",
         "breed": "Borzoi",
         "gender": "Female",
         "age": "Puppy",
         "adoption_date": "2023-01-22"
+      },
+      {
+        "id": 17,
+        "photo_url": "https://example.com/pet-photo.jpg",
+        "name": "Fluffy",
+        "breed": "Persian",
+        "gender": "Female",
+        "age": "Adult",
+        "adoption_date": "2022-09-15"
+      },
+      {
+        "id": 18,
+        "photo_url": "https://example.com/another-pet-photo.jpg",
+        "name": "Rocky",
+        "breed": "Boxer",
+        "gender": "Male",
+        "age": "Puppy",
+        "adoption_date": "2023-03-22"
       }
     ]
   }

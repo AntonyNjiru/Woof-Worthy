@@ -1,268 +1,151 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-/* Global style settings for all elements */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Quicksand', sans-serif; /* Updated font family */
 }
+
 body {
-  background-color: #FFC0CB; /* Changed from #151515 to pink */
+  background-color: #fff0f5; /* Light pink background */
+  color: #333;
+  line-height: 1.6; /* Slightly increased line height for readability */
 }
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+header {
+  background: #ff69b4; /* Bright pink background */
+  color: #ffffff;
   padding: 20px;
-  background-color: #FFC0CB; /* Pink background to match the site theme */
+  text-align: center;
 }
 
-.header-text h1 {
-  color: black; /* White color for text */
-  font-size: larger;
-  margin-bottom: 158px; /* Space between the heading and paragraph */
-}
-
-.header-text p {
-  color: black;
-  font-size: 1.2rem;
-}
-
-.header-image img {
-  width: 50px; /* Set a fixed width for the image */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 90px; /* Optional: Rounded corners for the image */
-}
-
-section{
+.search-container {
   display: flex;
-  align-items: centre;
   justify-content: center;
-  padding: 100px 0;
+  padding: 20px;
 }
 
-.brand{
-  text-align: center;
-  font-size: 5em;
+.search-container input,
+.search-container button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 25px; /* Increased border-radius for a rounded appearance */
 }
 
-.brand-description{
-  font: 2.5em;
-  margin-top: 15px;
-  text-align: center;
+.search-container input {
+  flex: 0.5; /* Reducing the length of the search input */
+  border: 2px solid #ff1493; /* Deep pink border */
+  outline: none;
 }
 
-.brand img{
-  width: 100px;
-  margin-top: 50px;
-}
-
-p {
-  font-family: "Poppins", sans-serif; 
-  color:black; /* Light pink color, change as necessary to fit your color scheme */
-  font-size: 1.2rem; 
-  text-align: center; 
-  /* margin: 1rem 0;  */
-  /* Consistent spacing */
-  padding: 0.5rem;/* Padding for better text display */
-  max-width: 80%;
-   /* Maximum width, adjust per design requirements */
-  margin: 1rem auto;
-   /* Centering in the page and adding margin */
-}
-
-/* Styling for webkit scrollbars*/
-/* removes the scroll bar */
-::-webkit-scrollbar {
-  display: none; /* Hides the scrollbar */
-}
-.card {
-  /*  clamp() ensures that the width of the card is responsive yet within specified bounds. */
-  width: clamp(150px, 95vw, 250px);
-  /* creates a shadow around the card */
-  box-shadow: 0 0 0.5rem rgba(255, 0, 0, 1);
-  outline: 2px solid rgba(255, 0, 0, 0.6);
-  overflow: hidden;
-  color: black;
+.search-container button {
+  background-color: #ff1493; /* Deep pink background */
+  color: white;
+  border: 2px solid #ff69b4; /* Light pink border for consistency */
   cursor: pointer;
-  border-radius: 0.5rem;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
-.img {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  position: relative;
-  /* adds an animation effect to transformations */
-  transition: 200ms ease-in-out transform;
+
+.search-container button:hover {
+  background-color: #ff69b4; /* Lighter pink on hover */
 }
-.img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+
+.search-container button:hover {
+  background-color: #ff69b4; /* Brighter pink on hover */
 }
-/* img::before adds decorative content before the actual content of the .img element. */
-.img::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 30%;
-  background-image: linear-gradient(to top, #FFC0CB, transparent); /* Updated gradient to pink */
-}
-.info {
-  padding: 2rem 1rem 1rem;
-}
-.info h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-}
-.single-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  margin: 0.2rem 0;
-}
-.card:hover .img {
-  transform: scale(1.1);
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
 .animal-grid {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 1rem;
-}
-
-.main-container {
-  padding: 1rem;
-  text-align: center;
-  color: #fff; /* Consider changing text color for readability if necessary */
-}
-
-.search {
-    display: flex;
-    justify-content: center;
-    column-gap: 1rem;
-    margin-top: 2rem;
-    padding: 2rem 0 1rem;
-}
-.search input,
-.search button {
-    padding: .5rem 1rem;
-    font-size: 1rem;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(255, 0, 0, .6);
-    color: #fff; /* Consider changing text color for readability if necessary */
-    border-radius: 1.5rem;
-}
-.search button {
-    cursor: pointer;
-}
-.search button:hover { background-color: rgba(255, 0, 0, .6); }
-.search button:active {
-    transform: scale(0.9);
-}
-.popup-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 1)), url(https://unsplash.it/1600/900);
-  background-size: cover;
-  background-position: center;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  padding: 3rem;
-  overflow-y: scroll;
-  transform: scale(0);
-  transition: 200ms ease-in-out transform;
-}
-.content {
-  display: flex;
-  align-items: flex-start;
-  gap: 3rem;
-  width: 1200px;
-  margin-top: 10rem;
-}
-.content .left .single-info {
-  font-size: 1rem;
-  padding: .5rem 0;
-}
-.content .left .single-info .heart-icon {
-  font-size: 2rem;
-  user-select: none;
-  cursor: pointer;
-}
-.content .left .single-info .heart-icon:hover { transform: scale(1.1); }
-.content .left .single-info .heart-icon:active { 
-  transform: scale(.9); 
-}
-
-.poster-img {
-  width: 300px;
-  height: 400px;
+  background: white;
+  border: 1px solid #ffcccc; /* Light pink border */
+  border-radius: 10px;
   overflow: hidden;
-  border-radius: .5rem;
-  box-shadow: 0 0 .5rem rgba(255, 0, 0, 1);
-  border: 1px solid rgba(255, 0, 0, 1);
 }
-.poster-img img {
+
+.card {
+  text-align: center;
+  padding: 20px;
+}
+
+.img img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
 }
-.single-info-container { 
-  width: 200px; 
+
+.info h2 {
+  color: #ff1493; /* Pink color for headings */
 }
 
-.right > *:not(h1) { 
-  margin: 1rem 0; 
+.single-info {
+  margin-top: 10px;
+  font-size: 0.9rem;
 }
-
-.x-icon {
-  font-size: 2rem;
-  position: absolute;
-  top: 100px;
-  right: 100px;
+.heart-icon {
   cursor: pointer;
+  font-size: 1.5rem;
+  color: grey; /* Default color */
+  transition: color 0.3s ease;
 }
 
-.x-icon:hover { 
-  transform: scale(1.3);
+.heart-icon.liked {
+  color: red; /* Color when liked */
 }
 
-.x-icon:active { 
-  transform: scale(1);
+.heart-icon:hover {
+  color: red; /* Temporary like color on hover */
+}
+.card {
+  text-align: center;
+  padding: 20px;
+  background: #ffffff; /* Base background color for the cards */
+  border: 1px solid #ffcccc; /* Soft pink border to fit the theme */
+  border-radius: 10px; /* Rounded corners for a softer look */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.2s ease; /* Smooth transitions for visual effects */
 }
 
-.show-popup { 
-  transform: scale(1);
+.card:hover {
+  transform: translateY(-5px); /* Slightly raise the card to give a lifting effect */
+  box-shadow: 0 10px 20px rgba(255, 105, 180, 0.25); /* Pink shadow to match the theme */
+  background-color: #fff5f8; /* A lighter pink background on hover */
 }
 
-.change-color { 
-  color: #ff0000;
+.img img {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Ensure images cover the area without distortion */
+  border-radius: 5px; /* Slightly rounded corners within the card */
 }
 
-@media only screen and (max-width: 800px) {
-  .popup-container * { 
-      padding: 0;
-  }
-  .popup-container { 
-      padding: 2rem; 
-  }
-  .content {
-      flex-direction: column;
-      margin-top: 50rem;
-  }
-  .x-icon {
-      top: 10px;
-      right: 20px;
-  }
+.info h2 {
+  color: #ff1493; /* Deep pink color for the title to stand out */
+  margin-bottom: 0.5rem; /* Space below the title */
+}
+
+.single-info {
+  display: flex;
+  justify-content: space-between; /* Aligns content on both ends */
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.heart-icon {
+  cursor: pointer;
+  font-size: 2rem; /* Larger icon size for easy interaction */
+  color: grey; /* Default grey color making it neutral when not liked */
+  transition: color 0.2s ease-in-out; /* Smooth transition for the color change */
+}
+
+.heart-icon.liked {
+  color: #ff69b4; /* Change to a pink color when liked to fit the theme */
+}
+
+.heart-icon:hover {
+  color: #ff1493; /* Darker pink on hover for the heart icon */
 }
