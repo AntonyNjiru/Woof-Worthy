@@ -1,66 +1,63 @@
-//grabbing html elements for DOM manipulation
-//api link 
-const api = 'https://api-staging.adoptapet.com/search/pet_search?key=hg4nsv85lppeoqqixy3tnlt3k8lj6o0c&v=3&output=json&city_or_zip=47374&geo_range=50&species=dog&breed_id=real=801&sex=m&age=young&color_id=54&pet_size_range_id=2&hair=&bonded_pair=&special_needs=&include_mixes=&added_after=&start_number=1&end_number=50&meta_only=0';
-//grabbing the search button
 const searchButton = document.getElementById('search-button');
-//grabbing the input form(getting the search value of the type of dog)
-let input = document.querySelector('#search-input');
-//grabbing area for result output
 const container = document.querySelector('.container');
 
-//function from fetching data from the api
-async function fetchPets(){
-    try{
-        //fetcing the data from api
-        const response = await fetch(api);
-        //converting data to json
-        const petData = await response.json();
-        console.log(petData);
-        //calling a function for generating html elements
-        generateHTML(petData.pets);
-    }catch(error){
-        console.error(error)
-    }
-    
+// Function for fetching random dog images from the Dog CEO API
+async function fetchRandomDogImage() {
+    const response = await fetch('https://dog.ceo/api/breeds/image/random');
+    const data = await response.json();
+    return data.message;  // Returns the URL of a random dog image
 }
 
-//adding an event listener to the button for fetching the json data
+// Function for fetching data from the local API and updating it with random dog images
+async function fetchPets() {
+    try {
+        const response = await fetch('http://localhost:3000/pets');
+        const pets = await response.json();
+        for (let pet of pets) {
+            pet.photo_url = await fetchRandomDogImage(); // Replace each pet's photo URL with a random dog image
+        }
+        generateHTML(pets);
+    } catch (error) {
+        console.error('Failed to fetch data:', error);
+    }
+}
+
+// Adding an event listener to the button for fetching the JSON data
 searchButton.addEventListener('click', fetchPets);
 
-//function for generating html elements
-function generateHTML(results){
-    //variable containing the html elements
+// Function for generating HTML elements to display pets
+function generateHTML(pets) {
     let generatedHTML = '';
-results.forEach(result => {
-    generatedHTML +=
-    `
-    <div class="animal-grid">
-        <div class="card" data-id="${result.id}">
-            <div class="img">
-                <img src="${result.photo_url}" alt="${result.name}">
-            </div>
-            <div class="info">
-                <h2>${result.name}</h2>
-                <div class="single-info">
-                    <span>Breed: </span>
-                    <span>${result.breed}</span>
+    pets.forEach(result => {
+        generatedHTML +=
+        `
+        <div class="animal-grid">
+            <div class="card" data-id="${result.id}">
+                <div class="img">
+                    <img src="${result.photo_url}" alt="${result.name}">
                 </div>
-                <div class="single-info">
-                    <span>Gender: </span>
-                    <span>${result.gender}</span>
-                </div>
-                <div class="single-info">
-                    <span>Age: </span>
-                    <span>${result.age}</span>
-                </div>
-                <div class="single-info">
-                    <span>Adoption Date: </span>
-                    <span>${result.adoption_date}</span>
+                <div class="info">
+                    <h2>${result.name}</h2>
+                    <div class="single-info">
+                        <span>Breed: </span>
+                        <span>${result.breed}</span>
+                    </div>
+                    <div class="single-info">
+                        <span>Gender: </span>
+                        <span>${result.gender}</span>
+                    </div>
+                    <div class="single-info">
+                        <span>Age: </span>
+                        <span>${result.age}</span>
+                    </div>
+                    <div class="single-info">
+                        <span>Adoption Date: </span>
+                        <span>${result.adoption_date}</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    `;
-});
+        `;
+    });
+    container.innerHTML = generatedHTML;
 }
-container.innerHTML = generatedHTML;
